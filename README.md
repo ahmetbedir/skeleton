@@ -12,8 +12,6 @@ Sadelik ve kolaylık bakımında beğendiğim Laravel'in kullandığı paketleri
 
 # Rota Sistemi
 ```php
-<?php
-
 Route::get('/makale/{id}', function(){
     return view('');
 });
@@ -21,8 +19,6 @@ Route::get('/makale/{id}', function(){
 
 # Eloquent Model
 ```php
-<?php
-
 class User extends Model {   
     protected $table = 'users';
 }
