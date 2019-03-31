@@ -1,6 +1,6 @@
 # Basit MVC Framework (BDR)
 
-İlgi merakım üzerine geliştirilen bir framework profesyonel bir amaç için şuanki halinde çok eksik var zamanla geliştirmeye devam edeceğim.
+İlgi ve merakım üzerine geliştirilen bir framework profesyonel bir amaç için şuanki halinde çok eksik var zamanla geliştirmeye devam edeceğim.
 
 Sadelik ve kolaylık bakımında beğendiğim Laravel'in kullandığı paketlerden bir kaçını kullanıyorum.
 
