@@ -1,0 +1,6 @@
+Options +FollowSymLinks
+Options -MultiViews
+RewriteEngine On
+
+
+RewriteRule ^(.*)$ index.php?url=$0 [QSA,L]

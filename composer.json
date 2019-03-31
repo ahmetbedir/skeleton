@@ -1,0 +1,35 @@
+{
+    "name": "ahmetbedir/mvc",
+    "type": "project",
+    "description": "BDR Framework",
+    "keywords": ["framework", "bdr"],
+    "homepage": "https://github.com/ahmetbedir/bdrmvc",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ahmet BEDİR",
+            "email": "a_bedir43@hotmail.com",
+            "homepage": "http://ahmetbedir.net",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php":">=5.4.0",
+        "illuminate/database": "^4.2",
+        "windwalker/edge": "^3.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        },
+        "classmap": [
+            "app/Models"
+        ],
+        "Windwalker\\Edge\\": ""
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "optimize-autoloader": true
+    }
+}
