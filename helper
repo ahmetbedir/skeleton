@@ -1,0 +1,18 @@
+#!/usr/bin/env php
+<?php
+
+if (PHP_SAPI != "cli") {
+    exit;
+}
+
+switch ($argv[1]) {
+    case 'serve':
+        $cmd = sprintf('/usr/bin/php -S %s:%s', 'localhost', '8000');
+        echo "Sunucu Başaltılıyor...\n";
+        echo "Sunucu Adresi: http://localhost:8000\n";
+        return exec($cmd);
+        break;
+    default:
+        echo "Lütfen geçerli bir parametre girin.";
+        break;
+}
