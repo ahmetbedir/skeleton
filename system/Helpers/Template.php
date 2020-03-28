@@ -7,18 +7,17 @@ use Windwalker\Edge\Loader\EdgeFileLoader as EdgeFileLoader;
 class Template
 {
 
-    public function render($file, $data = [], $cache = false)
+    public function render($file, $data = [], $cache = true)
     {
         $paths = array(VIEWS_PATH);
 
         $loader = new EdgeFileLoader($paths);
         $loader->addFileExtension('.blade.php');
-        $loader->addFileExtension('.edge.php');
 
         if ($cache === true) {
-            $this->edge = new Edge($loader);
+            $this->edge = new Edge($loader, null, new EdgeFileCache(STORAGE_PATH . '/framework/view/cache'));
         } else {
-            $this->edge = new Edge($loader, null, new EdgeFileCache(STORAGE_PATH . '/frameword/view/cache'));
+            $this->edge = new Edge($loader);
         }
 
         $result = null;
