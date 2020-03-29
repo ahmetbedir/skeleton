@@ -1,6 +1,8 @@
 <?php
 
-namespace Ahmetbedir\Skeleton\Core;
+namespace Skeleton\Core;
+
+use Closure;
 
 /**
  * Route Manager
@@ -139,7 +141,7 @@ class Route
             return self::classMethod();
         }
 
-        if (is_object(self::$currentRouteAction) && (self::$currentRouteAction instanceof \Closure)) {
+        if (self::$currentRouteAction instanceof Closure) {
             return self::closureMethod();
         }
 
@@ -158,7 +160,7 @@ class Route
         $method = $class[1];
         $class = "App\Controllers\\" . $class[0];
 
-        call_user_func_array(array(new $class, $method), self::$matchedRouteParams);
+        echo call_user_func_array(array(new $class, $method), self::$matchedRouteParams);
     }
 
     /**
@@ -235,12 +237,19 @@ class Route
     }
 
     /**
-     * Tüm rotalrın tanımlaması bittikten sonra rota kontrolünü gerçekleştirir.
+     * Tüm rotaların tanımlaması bittikten sonra rota kontrolünü gerçekleştirir.
      *
      * @return void
      */
     public static function dispatch()
     {
+        if (!isset($_GET['url'])) {
+            $uri = urldecode(
+                parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)
+            );
+
+            $_GET['url'] = $uri;
+        }
 
         foreach (self::$routes as $routeIndex => $route) {
             self::$matchedRoute = self::routeMatch($route);
@@ -253,8 +262,8 @@ class Route
             // İstek methodu ile rota methodunu kontrol et
             if (self::checkMethod($routeIndex)) {
                 self::startRoute($routeIndex);
+                break;
             }
-
         }
 
         self::routeNotFound();

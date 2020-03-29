@@ -20,4 +20,9 @@ class PageController
     {
         return view('about.index');
     }
+
+    public function contact()
+    {
+        return "contact page";
+    }
 }

@@ -1,6 +1,6 @@
 <?php
 
-use Ahmetbedir\Skeleton\Core\Route;
+use Skeleton\Core\Route;
 
 Route::get('/', 'PageController@index');
 

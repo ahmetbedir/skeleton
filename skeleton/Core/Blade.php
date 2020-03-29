@@ -1,15 +1,15 @@
 <?php
 
-namespace Ahmetbedir\Skeleton\Core;
+namespace Skeleton\Core;
 
 use Windwalker\Edge\Cache\EdgeFileCache as EdgeFileCache;
 use Windwalker\Edge\Edge;
 use Windwalker\Edge\Loader\EdgeFileLoader as EdgeFileLoader;
 
 /**
- * Template Manager
+ * Blade Template Manager
  */
-class Template
+class Blade
 {
 
     public function render($file, $data = [], $cache = true)
@@ -31,5 +31,4 @@ class Template
             throw new Exception($e);
         }
     }
-
 }

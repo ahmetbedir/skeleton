@@ -1,6 +1,6 @@
 <?php
 
-namespace Ahmetbedir\Skeleton\Core;
+namespace Skeleton\Core;
 
 /**
  * Controller Manager

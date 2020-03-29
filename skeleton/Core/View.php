@@ -1,6 +1,6 @@
 <?php
 
-namespace Ahmetbedir\Skeleton\Core;
+namespace Skeleton\Core;
 
 /**
  * View Manager
@@ -57,11 +57,11 @@ class View
 
         self::$data = array_key_filter(array_filter(self::$data));
 
-        $template = new Template();
+        $template = new Blade();
         $result = $template->render(self::$page, self::$data, self::$cache);
 
         if (!is_null($result)) {
-            echo $result;
+            return $result;
         } else {
             if (!file_exists($path)) {
                 throw new Exception("Hata: $path adlı view bulunamadı!", 1);
@@ -73,5 +73,10 @@ class View
 
             return require $path;
         }
+    }
+
+    public function __toString()
+    {
+        return $this->render();
     }
 }

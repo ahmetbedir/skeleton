@@ -6,6 +6,12 @@ if (PHP_SAPI != "cli") {
 }
 
 switch ($argv[1]) {
+    case 'make:controller':
+        Make::controller();
+        break;
+    case 'make:model':
+        Make::model();
+        break;
     case 'serve':
         $cmd = sprintf('php -S %s:%s server.php', 'localhost', '8000');
         echo "Sunucu Başaltılıyor...\n";
@@ -13,6 +19,66 @@ switch ($argv[1]) {
         return exec($cmd);
         break;
     default:
-        echo "Lütfen geçerli bir parametre girin.";
+        echo "Lütfen geçerli bir parametre girin.\n";
         break;
+}
+
+echo "\n";
+exec("composer dumpautoload");
+
+class Make
+{
+    public static function model(){
+        global $argv;
+
+        if (!isset($argv[2])) {
+            die("Lütfen bir model adı girin\n");
+        }
+
+        $name = $argv[2];
+
+        $stub = <<<STUB
+        <?php
+
+        namespace App\Models;
+
+        use Skeleton\Core\Model;
+
+        class $name extends Model
+        {
+            //
+        }
+        STUB;
+
+        file_put_contents('app/Models/' . $name . '.php', $stub);
+
+        echo $name." modeli oluşturuldu..\n";
+    }
+
+    public static function controller(){
+        global $argv;
+
+        if (!isset($argv[2])) {
+            die("Lütfen bir Controller adı girin\n");
+        }
+
+        $name = $argv[2];
+
+        $stub = <<<STUB
+        <?php
+
+        namespace App\Controllers;
+
+        use Skeleton\Core\Controller;
+
+        class $name extends Controller
+        {
+            //
+        }
+        STUB;
+
+        file_put_contents('app/Controllers/' . $name . '.php', $stub);
+
+        echo $name." controller oluşturuldu..\n";
+    }
 }

@@ -1,14 +1,13 @@
 <?php
 
-namespace Ahmetbedir\Skeleton\Core;
+namespace Skeleton\Core;
+
+use Illuminate\Support\Arr;
 
 class Config
 {
     public $configs = array();
 
-    /**
-     * Class constructor.
-     */
     public function __construct()
     {
         $configPath = config_path('/*');
@@ -18,13 +17,13 @@ class Config
 
             $this->configs[$path['filename']] = include $configFile;
 
-            $this->configs = array_merge($this->configs, array_dot($this->configs));
+            $this->configs = array_merge($this->configs, Arr::dot($this->configs));
         }
     }
 
     public function get(string $name)
     {
-        return array_get($this->configs, $name);
+        return Arr::get($this->configs, $name);
     }
 
 }

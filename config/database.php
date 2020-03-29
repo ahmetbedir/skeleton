@@ -14,12 +14,12 @@ return [
     'connections' => [
         'mysql' => [
             'driver' => 'mysql',
-            'host' => "127.0.0.1",
-            'username' => "ahmetbedir",
-            'password' => "",
-            'database' => "mvc",
-            'charset' => 'utf8',
-            'collation' => 'utf8_unicode_ci',
+            'host' => "192.168.65.2",
+            'username' => "admin",
+            'password' => "1021**",
+            'database' => "skeleton",
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
         ],
         'sqlsrv' => [
