@@ -38,7 +38,7 @@ Route::put('articles/{id}', 'ArticleController@update');
 Route::delete('articles/{id}', 'ArticleController@destroy');
 ```
 
-# Eloquent Model
+# Örnek: Eloquent User Model
 ```php
 use App\Models\Articles;
 
