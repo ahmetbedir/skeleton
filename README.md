@@ -6,7 +6,7 @@ Sadelik ve kolaylık bakımında beğendiğim Laravel'in kullandığı paketlerd
 
 ## Özellikleri
 - Eloquent Model Yapısı
-- Edge Template Motoru (Edge)
+- Blade/Edge Template Motoru
 - Laravel benzeri rota sistemi
 
 # Örnek: Rota Sistemi
