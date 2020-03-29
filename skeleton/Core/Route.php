@@ -126,7 +126,7 @@ class Route
 
         self::$currentRouteAction = self::$actions[$routeIndex];
 
-        self::runRoute();
+        return self::runRoute();
     }
 
     /**
@@ -160,7 +160,7 @@ class Route
         $method = $class[1];
         $class = "App\Controllers\\" . $class[0];
 
-        echo call_user_func_array(array(new $class, $method), self::$matchedRouteParams);
+        return call_user_func_array(array(new $class, $method), self::$matchedRouteParams);
     }
 
     /**
@@ -170,7 +170,7 @@ class Route
      */
     private static function closureMethod()
     {
-        call_user_func_array(self::$currentRouteAction, self::$matchedRouteParams);
+        return call_user_func_array(self::$currentRouteAction, self::$matchedRouteParams);
     }
 
     /**
@@ -261,8 +261,7 @@ class Route
 
             // İstek methodu ile rota methodunu kontrol et
             if (self::checkMethod($routeIndex)) {
-                self::startRoute($routeIndex);
-                break;
+                echo self::startRoute($routeIndex);
             }
         }
 
