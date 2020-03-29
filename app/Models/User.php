@@ -1,11 +1,14 @@
 <?php
 
-class User extends Model {
-    
+use Ahmetbedir\Skeleton\Core\Model;
+
+class User extends Model
+{
+
     /**
-     * $table değişkeni yazılmadığı durumlarda 
+     * $table değişkeni yazılmadığı durumlarda
      * tekil olarak tanımlanan class(user) adını
      * çoğul(users) olarak veritabanına otomatik olarak bağlanacak.
-    */
-    protected $table = 'users'; 
+     */
+    protected $table = 'users';
 }

@@ -1,15 +1,20 @@
 <?php
 
+namespace Ahmetbedir\Skeleton\Core;
+
 use Windwalker\Edge\Cache\EdgeFileCache as EdgeFileCache;
 use Windwalker\Edge\Edge;
 use Windwalker\Edge\Loader\EdgeFileLoader as EdgeFileLoader;
 
+/**
+ * Template Manager
+ */
 class Template
 {
 
     public function render($file, $data = [], $cache = true)
     {
-        $paths = array(VIEWS_PATH);
+        $paths = array(view_path());
 
         $loader = new EdgeFileLoader($paths);
         $loader->addFileExtension('.blade.php');
@@ -20,15 +25,11 @@ class Template
             $this->edge = new Edge($loader);
         }
 
-        $result = null;
-
         try {
-            $result = $this->edge->render($file, $data);
+            return $this->edge->render($file, $data);
         } catch (Exception $e) {
-            $result = null;
+            throw new Exception($e);
         }
-
-        return $result;
     }
 
 }

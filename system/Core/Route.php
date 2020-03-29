@@ -1,7 +1,9 @@
 <?php
 
+namespace Ahmetbedir\Skeleton\Core;
+
 /**
- *
+ * Route Manager
  */
 class Route
 {

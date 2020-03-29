@@ -2,26 +2,21 @@
 
 namespace App\Controllers;
 
-use \DB;
-use \View;
+class HomeController
+{
 
-class HomeController {
-    
-    function index(){       
-        // view("home.index", compact('desc'));
-        
-        // dd(DB::table('users')->where("name",'IN', ['ahmet','ahmetbedir'])->run());
-        
-        //return View::make('home.index', compact('desc'));
-        
+    public function index()
+    {
         return view('home.index');
     }
-    
-    function about(){
+
+    public function about()
+    {
         return view('about.index');
     }
-    
-    function contact(){
+
+    public function contact()
+    {
         echo 'contact method';
     }
 }
