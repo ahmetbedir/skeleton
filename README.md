@@ -1,4 +1,4 @@
-# Skeleton Framework
+# Skeleton PHP Framework
 
 İlgi ve merakım üzerine geliştirilen bir framework profesyonel bir amaç için kullanıma uygun değildir! Şuan ki halinde çok eksik var zamanla geliştirmeye devam edeceğim.
 
