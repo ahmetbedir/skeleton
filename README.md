@@ -18,16 +18,22 @@ Route::get('/users/{id}/articles', function($id){
 
 // Tüm yazıları göster
 Route::get('articles', 'ArticleController@index');
+
 // Yeni yazı oluşturma sayfasına git
 Route::get('articles/create', 'ArticleController@create');
+
 // Yeni yazı oluşturma formunda gönderilen değeleri kaydet
 Route::post('articles', 'ArticleController@store');
+
 // Gönderilen ID ye sahip yazıyı göster
 Route::get('articles/{id}', 'ArticleController@show');
+
 // Gönderilen ID ye sahip yazıyı bul ve düzenleme sayfasını aç
 Route::get('articles/{id}/edit', 'ArticleController@edit');
+
 // Gönderilen ID ye sahip yazıyı bul ve formdan gönderilen değerler ile güncelle
 Route::put('articles/{id}', 'ArticleController@update');
+
 // Gönderilen ID ye sahip yazıyı bul ve sil
 Route::delete('articles/{id}', 'ArticleController@destroy');
 ```
