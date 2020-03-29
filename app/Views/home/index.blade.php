@@ -7,7 +7,11 @@
 <body>
     <h1>Anasayfa</h1>
     <p>
-        Anasayfa içeriği...
+        <ul>
+            @foreach ($examples as $example)
+                <li>{{ $example }}</li>
+            @endforeach
+        </ul>
     </p>
 </body>
 </html>

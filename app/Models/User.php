@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Models;
+
 use Ahmetbedir\Skeleton\Core\Model;
 
 class User extends Model

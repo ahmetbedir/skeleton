@@ -2,21 +2,22 @@
 
 namespace App\Controllers;
 
-class HomeController
+class PageController
 {
-
     public function index()
     {
-        return view('home.index');
+        $examples = [
+            "Örnek 1",
+            "Örnek 2",
+            "Örnek 3",
+            "Örnek 4",
+        ];
+
+        return view('home.index', compact('examples'));
     }
 
     public function about()
     {
         return view('about.index');
-    }
-
-    public function contact()
-    {
-        echo 'contact method';
     }
 }
