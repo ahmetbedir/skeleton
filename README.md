@@ -9,7 +9,7 @@ Sadelik ve kolaylık bakımında beğendiğim Laravel'in kullandığı paketlerd
 - Edge Template Motoru (Edge)
 - Laravel benzeri rota sistemi
 
-# Rota Sistemi
+# Örnek: Rota Sistemi
 ```php
 // Gönderilen ID ye sahip kullanıcın yazılarını döndür
 Route::get('/users/{id}/articles', function($id){
